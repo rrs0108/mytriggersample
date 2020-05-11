@@ -1,0 +1,10 @@
+flows:
+  cronEvent:
+    - log: "Hello!"
+    - ${sleep.ms(65000)} # wait for 1m 5s
+
+triggers:
+- cron:
+    spec: "* * * * *" # run every minute
+    timezone: "America/Toronto"
+    entryPoint: cronEvent
